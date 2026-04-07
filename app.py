@@ -67,20 +67,19 @@ def chatbot():
             conversation.append(f"User: {user_input}")
             messages.append({"role": "user", "content": user_input})
 
-            # Call Groq API
+            # Call api
             response = client.chat.completions.create(
                 model='llama-3.1-8b-instant',
                 messages=messages
             )
 
-            # Get AI reply
+            # Get reply
             bot_reply = response.choices[0].message.content
 
-            # Save AI reply
+            # Save 
             messages.append({"role": "assistant", "content": bot_reply})
             conversation.append(f"Bot: {bot_reply}")
-
-            # Print AI reply
+ 
             print(bot_reply)
     except KeyboardInterrupt:
         print(f"\nChat ended by user. Goodbye {name}!")
@@ -91,7 +90,7 @@ def chatbot():
 # Run chatbot
 conversation = chatbot()
 
-# Save conversation to file
+# Save file
 with open("smart_chatbot.txt", "w", encoding="utf-8") as file:
     for line in conversation:
         file.write(line + "\n")
