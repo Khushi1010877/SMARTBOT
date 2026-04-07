@@ -1,0 +1,6 @@
+User: thnks
+Bot: It seems like you might be a bit preoccupied. How are you feeling today? Everything alright?
+User: yes im good
+Bot: It's great that you're doing alright. What brings you here today? Want to talk about something specific or just have a casual conversation?
+User: bie
+Bot: Goodbye! khushi.
