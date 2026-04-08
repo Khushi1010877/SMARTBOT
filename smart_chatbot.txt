@@ -1,6 +1,6 @@
-User: thnks
-Bot: It seems like you might be a bit preoccupied. How are you feeling today? Everything alright?
-User: yes im good
-Bot: It's great that you're doing alright. What brings you here today? Want to talk about something specific or just have a casual conversation?
+User: good
+Bot: It's great to hear that you're doing well. Is there anything on your mind that you'd like to talk about or is today just a relaxing day for you?
+User: yes thanks
+Bot: No problem at all. If you're feeling chatty, I'd love to hear more about what's been going on in your life lately. If not, we can just enjoy a casual conversation. How's your day going so far?
 User: bie
-Bot: Goodbye! khushi.
+Bot: Goodbye kashish! 👋
