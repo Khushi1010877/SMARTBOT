@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SMARTBOT</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SMARTBOT 🤖</h1>
+        <div id="chat-box" class="chat-box">
+            <div class="message bot">Hello! What's your name?</div>
+        </div>
+        <input type="text" id="user-input" placeholder="Type here..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        async function sendMessage() {
+            const input = document.getElementById("user-input");
+            const chatBox = document.getElementById("chat-box");
+            const message = input.value.trim();
+            if (!message) return;
+
+            // Show user message
+            const userDiv = document.createElement("div");
+            userDiv.className = "message user";
+            userDiv.innerText = message;
+            chatBox.appendChild(userDiv);
+            input.value = "";
+
+            // Send to backend
+            const res = await fetch("/chat", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({message})
+            });
+            const data = await res.json();
+
+            // Show bot reply
+            const botDiv = document.createElement("div");
+            botDiv.className = "message bot";
+            botDiv.innerHTML = data.reply;
+            chatBox.appendChild(botDiv);
+
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Open song URL if exists
+            if (data.song_url) window.open(data.song_url, "_blank");
+        }
+    </script>
+</body>
+</html>
